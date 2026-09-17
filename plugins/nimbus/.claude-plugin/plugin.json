@@ -1,0 +1,13 @@
+{
+  "name": "nimbus",
+  "description": "Connects Claude Code to the Nimbus Platform: create apps, mint git tokens, manage environment variables and deploy. Targets the dev environment.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Lanzark",
+    "url": "https://lanzark.com"
+  },
+  "homepage": "https://github.com/lanzark/nimbus-plugin",
+  "repository": "https://github.com/lanzark/nimbus-plugin",
+  "license": "UNLICENSED",
+  "keywords": ["nimbus", "lanzark", "mcp", "deploy"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "lanzark",
+  "owner": {
+    "name": "Lanzark",
+    "url": "https://lanzark.com"
+  },
+  "description": "Claude Code plugins maintained by Lanzark for the Nimbus Platform.",
+  "plugins": [
+    {
+      "name": "nimbus",
+      "source": "./plugins/nimbus",
+      "description": "Connects Claude Code to the Nimbus Platform MCP server (dev environment).",
+      "category": "productivity",
+      "keywords": [
+        "nimbus",
+        "lanzark",
+        "mcp",
+        "deploy"
+      ]
+    }
+  ]
+}

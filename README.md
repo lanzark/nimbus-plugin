@@ -38,18 +38,6 @@ and shipping a new app.
 In hook matchers and other scoped references these are named
 `mcp__plugin_nimbus_nimbus__<tool>`.
 
-## Environments
-
-Only **dev** exists today, so the plugin points at it unconditionally:
-
-```
-https://mcp.nimbus.lanzark.com/mcp
-```
-
-When a prod environment lands, add a second plugin entry (for example `nimbus-prod`) to
-`.claude-plugin/marketplace.json` with its own plugin directory and URL, rather than
-making this one switchable — a user can then have both installed and enable whichever
-they need.
 
 ## Develop
 

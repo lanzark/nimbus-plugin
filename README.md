@@ -43,7 +43,7 @@ In hook matchers and other scoped references these are named
 Only **dev** exists today, so the plugin points at it unconditionally:
 
 ```
-https://mcp.nimbus-dev.lanzark.com/mcp
+https://mcp.nimbus.lanzark.com/mcp
 ```
 
 When a prod environment lands, add a second plugin entry (for example `nimbus-prod`) to

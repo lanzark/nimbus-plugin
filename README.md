@@ -59,8 +59,7 @@ To build the ZIP for the OpenAI plugin submission portal:
 scripts/package-codex.sh   # writes dist/nimbus-codex.zip
 ```
 
-The script checks the listing limits and the icons before packaging. The submission
-checklist and the reviewer test cases are in [`submission/review.md`](submission/review.md).
+The script checks the listing limits and the icons before packaging.
 
 ## Develop
 
@@ -96,8 +95,6 @@ nimbus-plugin/
 │       ├── codex.mcp.json        # MCP server connection and OAuth (Codex)
 │       ├── assets/               # icon (nimbus-favicon-512.png)
 │       └── README.md
-├── scripts/
-│   └── package-codex.sh          # builds the submission ZIP
-└── submission/
-    └── review.md                 # submission checklist and test cases
+└── scripts/
+    └── package-codex.sh          # builds the submission ZIP
 ```

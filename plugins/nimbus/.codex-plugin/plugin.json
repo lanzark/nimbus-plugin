@@ -1,0 +1,40 @@
+{
+  "name": "nimbus",
+  "version": "0.1.0",
+  "description": "Connects Codex and ChatGPT to the Nimbus Platform by Lanzark: create apps, clone them, manage their environment variables and deploy them.",
+  "author": {
+    "name": "Lanzark",
+    "url": "https://lanzark.com"
+  },
+  "homepage": "https://github.com/lanzark/nimbus-plugin",
+  "repository": "https://github.com/lanzark/nimbus-plugin",
+  "license": "UNLICENSED",
+  "keywords": ["nimbus", "lanzark", "mcp", "deploy"],
+  "mcpServers": "./codex.mcp.json",
+  "interface": {
+    "displayName": "Lanzark Nimbus",
+    "shortDescription": "Build and deploy Nimbus apps",
+    "longDescription": "Lanzark Nimbus lets you create and ship internal web apps on the Nimbus Platform from a conversation. Create a new app from the Nimbus template, get a short-lived git credential to clone it, manage its environment variables, deploy it and follow the build. Sign in with your Nimbus account; every action runs with your own permissions inside your organization.",
+    "developerName": "Lanzark",
+    "category": "Productivity",
+    "capabilities": [
+      "Create Nimbus apps from the Nimbus template",
+      "List and inspect your Nimbus apps",
+      "Mint short-lived git credentials scoped to one app repository",
+      "Manage app environment variables",
+      "Deploy apps and follow their deployments"
+    ],
+    "websiteURL": "https://lanzark.com",
+    "supportURL": "https://lanzark.com/support",
+    "privacyPolicyURL": "https://lanzark.com/privacy",
+    "termsOfServiceURL": "https://lanzark.com/terms",
+    "defaultPrompt": [
+      "List my Nimbus apps",
+      "Create a new Nimbus app for tracking team requests",
+      "Deploy my Nimbus app and tell me when the build finishes"
+    ],
+    "brandColor": "#FF5400",
+    "logo": "./assets/nimbus-favicon-512.png",
+    "composerIcon": "./assets/nimbus-favicon-512.png"
+  }
+}

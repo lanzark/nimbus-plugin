@@ -39,6 +39,28 @@ In hook matchers and other scoped references these are named
 `mcp__plugin_nimbus_nimbus__<tool>`.
 
 
+## Codex and ChatGPT
+
+The same plugin is packaged for Codex with `plugins/nimbus/.codex-plugin/plugin.json`
+and `plugins/nimbus/codex.mcp.json`. The Codex MCP config is a separate file because
+Codex needs `"type": "streamable-http"`, while Claude Code needs `"type": "http"`.
+
+Try it locally from a checkout (the repo marketplace is `.agents/plugins/marketplace.json`):
+
+```shell
+codex plugin marketplace add ./
+```
+
+Enable `nimbus@lanzark`, restart the app and sign in when prompted.
+
+To build the ZIP for the OpenAI plugin submission portal:
+
+```shell
+scripts/package-codex.sh   # writes dist/nimbus-codex.zip
+```
+
+The script checks the listing limits and the icons before packaging.
+
 ## Develop
 
 Load the plugin from a checkout without installing it:
@@ -60,11 +82,19 @@ After editing plugin files in a running session, `/reload-plugins` picks them up
 ```
 nimbus-plugin/
 ├── .claude-plugin/
-│   └── marketplace.json          # this repo as a marketplace
-└── plugins/
-    └── nimbus/
-        ├── .claude-plugin/
-        │   └── plugin.json       # plugin manifest
-        ├── .mcp.json             # the MCP server connection
-        └── README.md
+│   └── marketplace.json          # this repo as a Claude Code marketplace
+├── .agents/plugins/
+│   └── marketplace.json          # this repo as a Codex marketplace (local testing)
+├── plugins/
+│   └── nimbus/
+│       ├── .claude-plugin/
+│       │   └── plugin.json       # Claude Code manifest
+│       ├── .codex-plugin/
+│       │   └── plugin.json       # Codex manifest and directory listing
+│       ├── .mcp.json             # MCP server connection (Claude Code)
+│       ├── codex.mcp.json        # MCP server connection and OAuth (Codex)
+│       ├── assets/               # icon (nimbus-favicon-512.png)
+│       └── README.md
+└── scripts/
+    └── package-codex.sh          # builds the submission ZIP
 ```

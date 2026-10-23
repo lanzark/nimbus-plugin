@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "nimbus": {
+      "type": "streamable-http",
+      "url": "https://mcp.nimbus.lanzark.com/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "dcr"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -24,10 +24,10 @@
       "Manage app environment variables",
       "Deploy apps and follow their deployments"
     ],
-    "websiteURL": "https://lanzark.com",
-    "supportURL": "https://lanzark.com/support",
-    "privacyPolicyURL": "https://lanzark.com/privacy",
-    "termsOfServiceURL": "https://lanzark.com/terms",
+    "websiteURL": "https://nimbus.lanzark.com",
+    "supportURL": "https://nimbus.lanzark.com/support",
+    "privacyPolicyURL": "https://nimbus.lanzark.com/privacy",
+    "termsOfServiceURL": "https://nimbus.lanzark.com/terms",
     "defaultPrompt": [
       "List my Nimbus apps",
       "Create a new Nimbus app for tracking team requests",

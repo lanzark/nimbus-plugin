@@ -59,7 +59,10 @@ To build the ZIP for the OpenAI plugin submission portal:
 scripts/package-codex.sh   # writes dist/nimbus-codex.zip
 ```
 
-The script checks the listing limits and the icons before packaging.
+The script checks the listing limits, the icons and the review information before
+packaging. The reviewer test cases and the demo video link live in
+`extensions.com.openai.review` of `.codex-plugin/plugin.json`. Reviewer credentials
+never go in the package: enter them in the portal's **Review details** form.
 
 ## Develop
 

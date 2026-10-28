@@ -36,5 +36,65 @@
     "brandColor": "#FF5400",
     "logo": "./assets/nimbus-favicon-512.png",
     "composerIcon": "./assets/nimbus-favicon-512.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Identify the signed-in user and their organization",
+              "prompt": "Which Nimbus account and organization am I using?",
+              "tools_triggered": "nimbus_me",
+              "expected_behavior": "Returns the test account's name, email and active organization."
+            },
+            {
+              "description": "List the user's apps",
+              "prompt": "List my Nimbus apps",
+              "tools_triggered": "list_apps",
+              "expected_behavior": "Lists the test account's sample apps, including demo-requests, with their names and status."
+            },
+            {
+              "description": "Show one app's details",
+              "prompt": "Show me the details of my demo-requests app",
+              "tools_triggered": "list_apps, get_app",
+              "expected_behavior": "Shows demo-requests' repository, URL and latest deployment."
+            },
+            {
+              "description": "Set an environment variable on an app",
+              "prompt": "Set GREETING=hello on demo-requests",
+              "tools_triggered": "set_env_vars",
+              "expected_behavior": "Asks for confirmation, then confirms GREETING was saved for demo-requests without repeating its value. It applies on the next deploy."
+            },
+            {
+              "description": "Deploy an app after the user confirms",
+              "prompt": "Deploy demo-requests and tell me when the build finishes",
+              "tools_triggered": "deploy_app, list_deployments",
+              "expected_behavior": "Shows a summary and asks whether to deploy. Only after the user says yes it starts the deployment and reports its status until the build finishes."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unrelated request: Nimbus should not be used",
+              "prompt": "What's the weather in Madrid today?"
+            },
+            {
+              "description": "General coding question with no Nimbus action",
+              "prompt": "Explain the difference between let and const in JavaScript"
+            },
+            {
+              "description": "Deployment to another platform: deploy_app should not run",
+              "prompt": "Deploy my site to Vercel"
+            }
+          ]
+        },
+        "demo_recording_url": "https://REPLACE-WITH-DEMO-VIDEO-URL",
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or process payments."
+      },
+      "publication": {
+        "release_notes": "Initial release: create Nimbus apps, mint git credentials, manage environment variables and deploy."
+      }
+    }
   }
 }

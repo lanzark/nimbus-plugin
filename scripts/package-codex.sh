@@ -33,6 +33,25 @@ for key in ("logo", "composerIcon"):
         if w != h or w < 48:
             errors.append(f"interface.{key}: {iface[key]} is {w}x{h}, must be square and at least 48x48")
 
+review = manifest.get("extensions", {}).get("com.openai", {}).get("review", {})
+cases = review.get("test_cases", {})
+positive, negative = cases.get("positive", []), cases.get("negative", [])
+if len(positive) != 5:
+    errors.append(f"review.test_cases.positive has {len(positive)} cases, MCP review needs exactly 5")
+if len(negative) != 3:
+    errors.append(f"review.test_cases.negative has {len(negative)} cases, MCP review needs exactly 3")
+for kind, required, items in (
+    ("positive", ("description", "prompt", "tools_triggered", "expected_behavior"), positive),
+    ("negative", ("description", "prompt"), negative),
+):
+    for n, case in enumerate(items, 1):
+        missing = [k for k in required if not case.get(k)]
+        if missing:
+            errors.append(f"review.test_cases.{kind}[{n}] is missing {', '.join(missing)}")
+demo = review.get("demo_recording_url", "")
+if not demo.startswith("https://") or "REPLACE" in demo:
+    errors.append("review.demo_recording_url must be the reviewer-accessible HTTPS video link")
+
 if errors:
     sys.exit("Cannot package:\n  - " + "\n  - ".join(errors))
 
